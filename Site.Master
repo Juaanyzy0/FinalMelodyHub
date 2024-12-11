@@ -1,0 +1,50 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Site.master.cs" Inherits="MelodyHub.Site" %>
+
+<!DOCTYPE html>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+<meta name="viewport" content="width=device-widht, intial-scale=1.0"/>
+<head runat="server">
+    <title>MelodyHub</title>
+    <link rel="stylesheet" href="resources/css/styles.css" />
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
+</head>
+<html>
+    <asp:ContentPlaceHolder ID="title" runat="server">
+    </asp:ContentPlaceHolder>
+<body>
+    <form id="form1" runat="server">
+        <div class="page-container">
+            <header>
+                <div class="logo">
+                    <h1>MelodyHub</h1>
+                </div>
+                <nav>
+                   <h2>Menú de navegación</h2>
+                    <ul>
+                        <li><asp:HyperLink runat="server" ID="Inicio" NavigateUrl="~/Inicio.aspx">Inicio</asp:HyperLink></li>
+                        <li><asp:HyperLink runat="server" ID="Instrumentos" NavigateUrl="~/instrumentos/Instrumentos.aspx">Gestión de instrumentos</asp:HyperLink></li>
+                    </ul>
+                </nav>
+            </header>
+            </div>
+            <div class="content">
+             <header>
+              <h1>Sistema de Gestión de Instrumentos</h1>
+            <div>
+             
+            <asp:Button ID="BtnSalir" runat="server" Text="Salir" OnClick="BtnSalir_Click1"/>
+            </div>
+            </header>
+
+            <main>
+                <asp:ContentPlaceHolder ID="main" runat="server">
+                </asp:ContentPlaceHolder>
+            </main>
+            <footer>
+                <p>&copy; 2024 MelodyHub - Todos los derechos reservados</p>
+            </footer>
+        </div>
+    </form>
+</body>
+</html>
