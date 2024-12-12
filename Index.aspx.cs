@@ -13,7 +13,7 @@ namespace MelodyHub
         {
             if (Session["usuario"] != null) //si ya hay sesión redirige al index.
             {
-                Response.Redirect("Login.aspx");
+                Response.Redirect("Login.aspx", false); //Manejo de sesión adecuado.
 
             }
 
