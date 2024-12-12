@@ -19,12 +19,12 @@ namespace MelodyHub.instrumentos
         {
             if (!IsPostBack)
             {
-                CargarInstrumentos();
+                Load_Instrumentos();
             }
         }
 
         // Método para cargar los instrumentos en el GridView
-        private void CargarInstrumentos()
+        private void Load_Instrumentos()
         {
             using (MySqlConnection conexion = new MySqlConnection(cadenaConexion))
             {
@@ -32,8 +32,8 @@ namespace MelodyHub.instrumentos
                 MySqlDataAdapter adapter = new MySqlDataAdapter(query, conexion);
                 DataTable dt = new DataTable();
                 adapter.Fill(dt);
-                gvInstrumentos.DataSource = dt;
-                gvInstrumentos.DataBind();
+                GvInstrumentos.DataSource = dt;
+                GvInstrumentos.DataBind();
             }
         }
 
