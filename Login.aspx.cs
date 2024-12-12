@@ -9,12 +9,16 @@ using MySql.Data.MySqlClient;
 
 namespace MelodyHub
 {
-    public partial class login : System.Web.UI.Page
+    public partial class Login : System.Web.UI.Page
     {
         String cadenaConexion = ConfigurationManager.ConnectionStrings["conexion"].ConnectionString;
         protected void Page_Load(object sender, EventArgs e)
         {
-            
+          if (Session["usuario"] != null) // Si ya hay sesión, redirige a Index
+           {
+             Response.Redirect("~/Index.aspx", false); Context.ApplicationInstance.CompleteRequest();
+           }
+        }
         }   
 
         protected void BtnIngresar_Click(object sender, EventArgs e)
