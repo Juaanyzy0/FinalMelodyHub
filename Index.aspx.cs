@@ -11,9 +11,9 @@ namespace MelodyHub
         {
         protected void Page_Load(object sender, EventArgs e)
         {
-            if (Session["usuario"] != null) //si ya hay sesión redirige al index.
+            if (Session["usuario"] == null)
             {
-                Response.Redirect("Login.aspx", false); //Manejo de sesión adecuado.
+                Response.Redirect("~/Login.aspx", false); //Manejo de sesión adecuado.
 
             }
 
